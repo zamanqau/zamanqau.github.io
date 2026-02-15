@@ -32,17 +32,19 @@ nav ul {
   display: flex;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 1rem;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.2rem 1rem;
 }
 
 nav li {
-  margin: 0 1.5rem;
+  margin: 0;
 }
 
 nav a {
   display: block;
-  padding: 1rem 0;
+  padding: 1rem 0.25rem;
   color: #fff;
   text-decoration: none;
   font-weight: bold;
@@ -110,6 +112,31 @@ nav a:focus {
   font-weight: 300;
 }
 
+.profile-links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.profile-link {
+  display: inline-block;
+  padding: 0.55rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.profile-link:hover,
+.profile-link:focus {
+  background: rgba(255, 255, 255, 0.2);
+}
+
 /* Sections */
 section {
   padding: 3rem 12%;
@@ -117,6 +144,7 @@ section {
   margin-bottom: 1rem;
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  scroll-margin-top: 5rem;
 }
 
 section:nth-of-type(even) {
@@ -167,11 +195,41 @@ footer a {
 }
 
 @media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
+  nav {
+    position: static;
   }
-  nav li {
-    margin: 0.5rem 0;
+  nav ul {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 0.75rem;
+    padding: 0 0.75rem;
+  }
+  nav a {
+    white-space: nowrap;
+    padding: 0.85rem 0.15rem;
+    font-size: 0.95rem;
+  }
+  .hero {
+    height: auto;
+    min-height: 360px;
+    padding: 2rem 0.75rem;
+  }
+  .hero h1 {
+    font-size: 1.85rem;
+    line-height: 1.2;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .profile-link {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.85rem;
+  }
+  .profile-photo {
+    width: 140px;
+    height: 140px;
   }
   section {
     padding: 2rem 6%;
